@@ -15,6 +15,8 @@ return new class extends Migration
 
             $table->text('full_name')->nullable();
             $table->text('role')->nullable();
+            $table->unsignedBigINteger('id_team');
+            $table->foreign('id_team')->references('id')->on('team');
         });
     }
     /**
@@ -25,6 +27,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn(columns: 'full_name');
             $table->dropColumn(columns: 'role');
+            $table->dropColumn(columns: 'id_team');
     });
         }
 };
