@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,6 @@ Route::get('/', function () {
 Route::get('/hello', function () {
     return view('hello', ['title' => 'Hello world!']);
 });
+
+Route::get('/team',[TeamController::class, 'index']);
+Route::get('/team/{id}', [TeamController::class, 'show']);
