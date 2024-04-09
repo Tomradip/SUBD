@@ -15,7 +15,7 @@ class Team extends Model
         return $this->HasMany(User::class);
     }
 
-    public function match(): HasMany
+    public function matches(): HasMany
     {
         return $this->HasMany(Matches::class);
     }
