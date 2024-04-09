@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MatchController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,4 @@ Route::get('/hello', function () {
 
 Route::get('/team',[TeamController::class, 'index']);
 Route::get('/team/{id}', [TeamController::class, 'show']);
+Route::get('/match', [MatchController::class, 'index']);
