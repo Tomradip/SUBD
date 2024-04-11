@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Goals extends Model
+class Goal extends Model
 {
     use HasFactory;
 
     protected $table = 'goal';
-    public function match()
+    public function games()
     {
-        return $this->belongsTo(Matches::class);
+        return $this->belongsTo(Game::class);
     }
 
     public function users()

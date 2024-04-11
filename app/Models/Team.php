@@ -10,17 +10,22 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Team extends Model
 {
     use HasFactory;
+    protected $table = 'teams';
     public function users(): HasMany
     {
         return $this->HasMany(User::class);
     }
 
-    public function matches(): HasMany
+    public function games(): HasMany
     {
-        return $this->HasMany(Matches::class);
+        return $this->HasMany(Game::class, 'id_team1');
     }
-    public function goal(): BelongsToMany
+    public function awaygames(): HasMany
     {
-        return $this->BelongsToMany(Goals::class, 'users');
+        return $this->HasMany(Game::class, 'id_team2');
+    }
+    public function goals(): BelongsToMany
+    {
+        return $this->BelongsToMany(Goal::class, 'users');
     }
 }

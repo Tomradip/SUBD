@@ -12,11 +12,11 @@
     <td>Первая команда</td>
     <td>Вторая команда</td>
     </thead>
-    @foreach($matches as $match)
+    @foreach($games as $game)
         <tr>
-            <td>{{$match->id}}</td>
-            <td>{{$match->team->name}}</td>
-            <td>{{$match->team->name}}</td>
+            <td>{{$game->id}}</td>
+            <td>{{$game->team ? $game->team->name : 'Нет команды'}}</td>
+            <td>{{$game->opponent ? $game->opponent->name : 'Нет команды'}}</td>
         </tr>
     @endforeach
 </table>

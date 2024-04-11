@@ -10,15 +10,15 @@
     <table border="1">
         <th>
             <td>id</td>
-            <td>id Первой команды</td>
-            <td>id Второй команды</td>
+            <td>Первой команды</td>
+            <td>Второй команды</td>
         </th>
 
-    @foreach($team->matches as $match)
+    @foreach($team->games as $game)
         <tr>
-            <td>{{$match->id}}</td>
-            <td>{{$match->id_team1}}</td>
-            <td>{{$match->id_team2}}</td>
+            <td>{{$game->id}}</td>
+            <td>{{$game->team1->name}}</td>
+            <td>{{$game->team2->name}}</td>
         </tr>
             @endforeach
 

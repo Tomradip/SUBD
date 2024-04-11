@@ -6,16 +6,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\BelongTo;
-class Matches extends Model
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+class Game extends Model
 {
     use HasFactory;
-    public function goal(): HasMany
+    protected $table = 'games';
+    public function goals(): HasMany
     {
-        return $this->HasMany(Goals::class);
+        return $this->HasMany(Goal::class);
     }
-    public function teams(): BelongTo
+    public function teams(): BelongsTo
     {
-        return $this->BelongTo(Team::class);
+        return $this->BelongsTo(Team::class);
     }
 }

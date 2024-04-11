@@ -17,18 +17,18 @@ class User extends Authenticatable
 
     public $datetime = false;
 
-    public function team(): BelongsTo
+    public function teams(): BelongsTo
     {
         return $this->belongsTo(Team::class);
     }
-    public function Matches(): BelongsToMany
+    public function games(): BelongsToMany
     {
-        return $this->belongsToMany(matches::class, 'team');
+        return $this->belongsToMany(Game::class, 'teams');
     }
 
-    public function goal(): HasMany
+    public function goals(): HasMany
     {
-        return $this->hasMany(Goals::class);
+        return $this->hasMany(Goal::class);
     }
 
     /**
