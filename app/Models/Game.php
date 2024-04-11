@@ -19,4 +19,13 @@ class Game extends Model
     {
         return $this->BelongsTo(Team::class);
     }
+    public function team1(): BelongsTo
+    {
+        return $this->belongsTo(Team::class, 'id_team1');
+    }
+
+    public function team2(): BelongsTo
+    {
+        return $this->belongsTo(Team::class, 'id_team2');
+    }
 }

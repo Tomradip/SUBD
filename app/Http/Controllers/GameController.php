@@ -6,15 +6,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Game;
 
-class MatchController extends Controller
+class GameController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('matches',[
-            'matches'=>Game::all()
+        return view('games',[
+            'games'=>Game::all()
         ]);
     }
 

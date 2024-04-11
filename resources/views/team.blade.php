@@ -8,11 +8,11 @@
     <h2>{{$team ? "Матчи в которых сыграли команда ".$team->name : "Неверный ID команды"}}</h2>
     @if($team)
     <table border="1">
-        <th>
+        <thead>
             <td>id</td>
-            <td>Первой команды</td>
-            <td>Второй команды</td>
-        </th>
+            <td>Первая команда</td>
+            <td>Вторая команда</td>
+        </thead>
 
     @foreach($team->games as $game)
         <tr>
